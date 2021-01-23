@@ -43,6 +43,7 @@ struct ContentView: View {
                     let playerRand = Int.random(in: 2...14)
                     let cpuRand = Int.random(in: 2...14)
                     
+                    
                     // Update the cards
                     
                     playerCard = "card" + String(playerRand)
@@ -50,8 +51,15 @@ struct ContentView: View {
                     
                     // Update the score
                     
-//                    playerScore += 1
-//                    cpuScore += 1
+                    if playerRand > cpuRand {
+                        playerScore += 1
+                    }
+                    else if cpuRand > playerRand {
+                        cpuScore += 1
+                    }
+                    
+                    
+                   
                     
                 }, label: {
                     Image("dealbutton")
